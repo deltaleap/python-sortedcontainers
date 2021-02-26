@@ -18,22 +18,14 @@ Sorted dict implementations:
 
 import sys
 import warnings
+from collections.abc import ItemsView
+from collections.abc import KeysView
+from collections.abc import ValuesView
+from collections.abc import Sequence
 
-from .sortedlist import SortedList, recursive_repr
+from .sortedlist import SortedList
+from .sortedlist import recursive_repr
 from .sortedset import SortedSet
-
-###############################################################################
-# BEGIN Python 2/3 Shims
-###############################################################################
-
-try:
-    from collections.abc import ItemsView, KeysView, ValuesView, Sequence
-except ImportError:
-    from collections import ItemsView, KeysView, ValuesView, Sequence
-
-###############################################################################
-# END Python 2/3 Shims
-###############################################################################
 
 
 class SortedDict(dict):
